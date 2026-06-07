@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samuel Sasaki</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #0d0d0d;
+      color: #e8e8e8;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 80px 24px;
+    }
+
+    .container {
+      max-width: 640px;
+      width: 100%;
+    }
+
+    header {
+      margin-bottom: 64px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .links a {
+      color: #888;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s;
+    }
+
+    .links a:hover {
+      color: #e8e8e8;
+    }
+
+    h2 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .project {
+      border: 1px solid #1f1f1f;
+      border-radius: 8px;
+      padding: 24px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .project:hover {
+      border-color: #333;
+      background: #111;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .project h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .project a.live {
+      font-size: 0.8rem;
+      color: #555;
+      text-decoration: none;
+      transition: color 0.15s;
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+
+    .project a.live:hover {
+      color: #e8e8e8;
+    }
+
+    .project p {
+      font-size: 0.875rem;
+      color: #888;
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+
+    .project ul {
+      font-size: 0.875rem;
+      color: #888;
+      line-height: 1.65;
+      padding-left: 18px;
+      margin-bottom: 10px;
+    }
+
+    .project ul li {
+      margin-bottom: 5px;
+    }
+
+    .project ul li strong {
+      color: #bbb;
+      font-weight: 500;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      color: #555;
+      background: #161616;
+      border: 1px solid #272727;
+      border-radius: 4px;
+      padding: 3px 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Samuel Sasaki</h1>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/sammy-sasaki/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/SammySasaki" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </header>
+
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+      <div class="project">
+        <div class="project-header">
+          <h3>MLB Betting Assistant</h3>
+          <a class="live" href="https://mlb-betting-assistant-production.up.railway.app/" target="_blank" rel="noopener">Live ↗</a>
+        </div>
+        <p>A full-stack MLB game prediction tool with a LangGraph-powered AI chatbot, FastAPI backend, and Streamlit UI. Ingests live odds, lineups, weather, and park data to generate over/under predictions using a trained XGBoost model — anchored to Vegas closing lines with adjustments for pitching form, bullpen quality, lineup strength, and game-day conditions.</p>
+        <p>The ML model uses a residual prediction approach trained on games across four MLB seasons. The chatbot layer lets users ask natural language questions about games, lineups, and predictions through a multi-agent LangGraph workflow.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">LangGraph</span>
+          <span class="tag">XGBoost</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Docker</span>
+          <span class="tag">OpenAI API</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <h3>Music Manager</h3>
+          <a class="live" href="https://music-manager.up.railway.app/" target="_blank" rel="noopener">Live ↗</a>
+        </div>
+        <p>A full-stack web app that connects to the Spotify API to give you superpowers over your playlists. Four core tools — <em style="color: #555; font-style: normal;">Discovery is open to all; Shuffler, Updater, and Creator require Spotify account whitelisting.</em></p>
+        <ul>
+          <li><strong>Shuffler</strong> — truly randomizes a playlist using Fisher-Yates, replacing the order directly in your Spotify library</li>
+          <li><strong>Updater</strong> — refreshes every track by swapping each one for a random song from the same artist</li>
+          <li><strong>Creator</strong> — generates a new playlist of any length from a list of artists, picking songs at random from their discographies</li>
+          <li><strong>Discovery</strong> — AI-powered recommendation engine using anchor tracks as a taste fingerprint, ranked by cosine similarity with upvote/downvote steering</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">Spotify API</span>
+          <span class="tag">Last.fm API</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <h3>Settle It</h3>
+          <a class="live" href="https://settle-it.up.railway.app/" target="_blank" rel="noopener">Live ↗</a>
+        </div>
+        <p>A real-time group decision app for indecisive groups. Share a link, let everyone privately rank options through A vs B comparisons, and get an aggregated winner.</p>
+        <p>For people with no ideas, supports AI suggestions via Claude API and Google Places generate and enrich options with ratings, hours, and pricing. Supports async voting so participants can rank on their own time, plus solo mode for individual decisions.</p>
+        <div class="tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Server-Sent Events</span>
+          <span class="tag">Claude API</span>
+          <span class="tag">Google Places</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
